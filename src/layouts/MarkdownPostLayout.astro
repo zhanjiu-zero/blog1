@@ -1,0 +1,40 @@
+---
+
+
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+const allPosts = Object.values(import.meta.glob('../post/*.md', { eager: true }));
+const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+    <meta charset="utf-8"> 
+    <p>由 {frontmatter.author} 发布</p>
+    <p>发表时间{frontmatter.pubDate}</p>
+    <div class="tags">
+        {frontmatter.tags.map((tag: string) => (
+          <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+        ))}
+      </div>
+    <slot />
+    <style>
+        a {
+          color: #00539F;
+        }
+      
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      
+        .tag {
+          margin: 0.25em;
+          border: dotted 1px #a1a1a1;
+          border-radius: .5em;
+          padding: .5em 1em;
+          font-size: 1.15em;
+          background-color: #F8FCFD;
+        }
+      </style>
+</BaseLayout>

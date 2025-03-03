@@ -1,13 +1,13 @@
 ---
-title: '大家好'
-pubDate: 2025-03-02
+layout: ../../layouts/MarkdownPostLayout.astro
+
+title: '第一篇博客'
+pubDate: '    2025-03-02'
 description: '这是我个人博客的第一篇文章。'
-author: '湛玖'
+author: 湛玖
+tags: ["blogging"]
 ---
 
-# 第一篇博客文章
-
- 发表于：2025-03-02
 
  欢迎来到我的个人博客！在这里，我将分享我建立网站的过程以及我日常生活的学习和趣事。
 
