@@ -1,8 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 
-const allPosts = Object.values(import.meta.glob('./post/*.md', { eager: true }));
+const allPosts = await getCollection("blog");
 const pageTitle = "湛玖的博客";
 
 ---
@@ -15,8 +16,11 @@ const pageTitle = "湛玖的博客";
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
-		<ul>
-			{allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+		<ul>{
+			allPosts.map((post) => (
+			<BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
+		  	))
+		  }
 		</ul>
 	</body>
 </html>

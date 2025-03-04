@@ -1,11 +1,14 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+
 
 title: '第一篇博客'
-pubDate: '    2025-03-02'
+pubDate: 2025-03-02
 description: '这是我个人博客的第一篇文章。'
 author: 湛玖
 tags: ["blogging"]
+image:
+    url: 'https://docs.astro.build/assets/rose.webp'
+    alt: 'The Astro logo on a dark background with a pink glow.'
 ---
 
 
