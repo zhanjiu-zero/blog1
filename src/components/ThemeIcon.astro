@@ -9,15 +9,20 @@
   
   <style>
     #themeToggle {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
       border: 0;
       background: none;
+      padding: 10px; /* 可选，增加点击区域 */
+      z-index: 1000;  /* 确保按钮在最上层 */
     }
     .sun { fill: black; }
     .moon { fill: transparent; }
   
     :global(.dark) .sun { fill: transparent; }
     :global(.dark) .moon { fill: white; }
-  </style>
+</style>
 
 <script is:inline>
     const theme = (() => {

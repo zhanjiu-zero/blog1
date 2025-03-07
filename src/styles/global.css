@@ -31,7 +31,7 @@ html {
     width: 40px;
     height: 5px;
     margin-bottom: 10px;
-    background-color: #ff9776;
+    background-color: #baa8fd;
   }
 
 
@@ -41,7 +41,7 @@ html {
     width: 100%;
     top: 5rem;
     left: 48px;
-    background-color: #ff9776;
+    background-color: #baa8fd;
     display: none;
     margin: 0;
   }
@@ -58,11 +58,17 @@ html {
   
   .nav-links a:hover,
   .nav-links a:focus {
-    background-color: #ff9776;
+    background-color: #baa8fd;
   }
   
   .expanded {
-    display: unset;
+    display: flex;          
+    flex-direction: row;    
+    flex-wrap: nowrap;      
+    align-items: center;    
+    gap: 7rem;              
+    overflow-x: auto;
+    white-space: nowrap;
   }
   
   @media screen and (min-width: 636px) {
@@ -88,8 +94,8 @@ html {
   }
 
   html.dark {
-    background-color: #836aac;
-    color: #fff;
+    background-color: #433c58;
+    color: #f3f3f3;
   }
   
   .dark .nav-links a {
